@@ -1,0 +1,2 @@
+This is a project made for a local Pump it up community and specifically for personal uses. The project fetches API and then it generates a random chart where you can choose from singles and doubles.  
+API Documentation: https://piuscores.arroweclip.se/swagger/index.html
