@@ -9,13 +9,14 @@ export default defineConfig({
         target: 'https://piuscores.arroweclip.se',
         changeOrigin: true,
         secure: false,
-        configure: (proxy, options) => {
-          proxy.on('proxyReq', (proxyReq, req, res) => {
+        configure: (proxy, _options) => {
+          proxy.on('proxyReq', (proxyReq, _req, _res) => {
             // Loguj co proxy posílá
             console.log('Proxy request headers:', proxyReq.getHeaders());
           });
         }
       }
     }
+    
   }
 })
