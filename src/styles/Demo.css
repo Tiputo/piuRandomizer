@@ -1,0 +1,329 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Container */
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 2rem;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Loading */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.spinner {
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Filter Panel */
+.filter-panel {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 0 auto 3rem;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.filter-group {
+    margin-bottom: 2rem;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group > label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 1rem;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: #667eea;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+}
+
+/* Ranges */
+.range-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.range-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.range-input label {
+    min-width: 50px;
+    font-weight: bold;
+}
+
+.range-input input[type="range"] {
+    flex: 1;
+}
+
+.range-value {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* Count Input */
+.count-input-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.count-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.count-btn:disabled {
+    opacity: 0.3;
+}
+
+.count-input {
+    width: 70px;
+    padding: 0.5rem;
+    text-align: center;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.count-slider {
+    flex: 1;
+}
+
+/* Apply Button */
+.apply-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.apply-btn:hover {
+    opacity: 0.9;
+}
+
+/* Error */
+.error-message {
+    background: #e74c3c;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto 2rem;
+    max-width: 600px;
+}
+
+/* Charts Grid */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Chart Card */
+.chart-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.chart-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chart-type {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.chart-type.single { background: #3498db; }
+.chart-type.double { background: #e74c3c; }
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.song-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    min-height: 2.4rem;
+}
+
+.chart-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: bold;
+    color: #666;
+}
+
+.level {
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.level-1, .level-2, .level-3, .level-4, .level-5,
+.level-6, .level-7, .level-8, .level-9, .level-10 { background: #2ecc71; }
+.level-11, .level-12, .level-13, .level-14, .level-15 { background: #f39c12; }
+.level-16, .level-17, .level-18, .level-19, .level-20 { background: #e67e22; }
+.level-21, .level-22, .level-23, .level-24, .level-25,
+.level-26, .level-27, .level-28 { background: #e74c3c; }
+
+.shorthand {
+    font-weight: bold;
+    background: #f5f5f5;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+}
+
+.song-type {
+    background: #ecf0f1;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 2rem; }
+    .button-group { grid-template-columns: 1fr; }
+    .charts-grid { grid-template-columns: 1fr; }
+}
