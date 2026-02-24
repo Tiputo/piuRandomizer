@@ -256,8 +256,8 @@ body {
     font-size: 0.9rem;
 }
 
-.chart-type.single { background: #3498db; }
-.chart-type.double { background: #e74c3c; }
+.chart-type.single { background: #ea1408; }
+.chart-type.double { background: #2ecc71; }
 
 .card-content {
     padding: 1.5rem;
