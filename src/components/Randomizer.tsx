@@ -82,6 +82,9 @@ export default function Randomizer() {
         } else if (newType === 'Double') {
             setMinLevel(5);
             setMaxLevel(28);
+        } else if (newType === 'CoOp') {
+            setMinLevel(1)
+            setMinLevel(5)
         }
     }
 

@@ -25,6 +25,7 @@ export default function FilterPanel({
     const getLevelLimits = () => {
         if (chartType === 'Single') return { min: 1, max: 26 };
         if (chartType === 'Double') return { min: 5, max: 28 };
+        if(chartType === 'CoOp') return { min: 1, max: 5};
         return { min: 1, max: 28 };
     };
 
@@ -53,6 +54,11 @@ export default function FilterPanel({
                         onClick={() => onTypeChange('Double')}
                     >
                         Double
+                    </button>
+                    <button className={`filter-btn ${chartType === 'CoOp' ? 'active' : ''}`}
+                        onClick={() => onTypeChange('CoOp')}
+                        > 
+                        Coop
                     </button>
                 </div>
             </div>
