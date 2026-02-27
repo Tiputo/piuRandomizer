@@ -76,15 +76,20 @@ export default function Randomizer() {
         setChartType(newType);
         
         // Nastav správné limity levelů
-        if (newType === 'Single') {
+         if (newType === 'All') {
+            setMinLevel(1);
+            setMaxLevel(28);
+        } else if
+        (newType === 'Single') {
             setMinLevel(1);
             setMaxLevel(26);
-        } else if (newType === 'Double') {
+        } 
+        else if (newType === 'Double') {
             setMinLevel(5);
             setMaxLevel(28);
         } else if (newType === 'CoOp') {
             setMinLevel(1)
-            setMinLevel(5)
+            setMaxLevel(5)
         }
     }
 

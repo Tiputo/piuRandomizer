@@ -58,7 +58,7 @@ export default function FilterPanel({
                     <button className={`filter-btn ${chartType === 'CoOp' ? 'active' : ''}`}
                         onClick={() => onTypeChange('CoOp')}
                         > 
-                        Coop
+                        Co-op
                     </button>
                 </div>
             </div>
